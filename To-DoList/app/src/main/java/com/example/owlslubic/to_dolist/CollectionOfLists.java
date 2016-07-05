@@ -14,7 +14,7 @@ import android.widget.TextView;
 
 import java.util.LinkedList;
 
-public class ListOfLists extends AppCompatActivity {
+public class CollectionOfLists extends AppCompatActivity {
     LinkedList<String> mNameList;
     ArrayAdapter<String> mAdapter;
     BaseAdapter mBaseAdapter;
@@ -22,7 +22,7 @@ public class ListOfLists extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_list_of_lists);
+        setContentView(R.layout.activity_collection_of_lists);
 
 
         mNameList = new LinkedList<>();
@@ -56,7 +56,7 @@ public class ListOfLists extends AppCompatActivity {
                 View v = convertView;
 
                 if (convertView == null) {
-                    LayoutInflater li = (LayoutInflater) ListOfLists.this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+                    LayoutInflater li = (LayoutInflater) CollectionOfLists.this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
                     v = li.inflate(android.R.layout.simple_list_item_1, null);
                 }
 
