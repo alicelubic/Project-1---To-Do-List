@@ -15,5 +15,6 @@ public class NewListActivity extends AppCompatActivity {
 
         mRecyclerViewNewList = (RecyclerView) findViewById(R.id.recyclerview_new_list);
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this,LinearLayoutManager.VERTICAL,false);
+        mRecyclerViewNewList.setLayoutManager(linearLayoutManager);
     }
 }

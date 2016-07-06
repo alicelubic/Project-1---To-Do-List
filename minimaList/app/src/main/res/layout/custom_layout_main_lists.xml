@@ -20,13 +20,13 @@
         android:padding="10dp">
 
 
-    <TextView
-        android:id="@+id/textview_list_title"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="List Title"
-        android:textSize="27sp"
-        android:padding="10dp"/>
+         <TextView
+             android:id="@+id/textview_list_title"
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:text="List Title"
+             android:textSize="27sp"
+             android:padding="10dp"/>
 
     </LinearLayout>
 
@@ -35,6 +35,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|end"
+        android:layout_margin="@dimen/fab_margin"
         android:src="@android:drawable/ic_input_add"/>
 
 </LinearLayout>

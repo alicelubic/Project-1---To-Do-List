@@ -4,21 +4,27 @@
     android:layout_height="match_parent"
     android:padding="20dp">
 
+
     <EditText
         android:id="@+id/edittext_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:hint="Edit Title"
+        android:hint="Edit List Title"
         android:textSize="30sp"
-        android:ems="5"
-        android:paddingLeft="20dp"
+        android:layout_weight="20"
+        android:padding="10dp"
         android:layout_gravity="center_horizontal"/>
 
-    <LinearLayout
-        android:id="@+id/linearlayout_new_list"
+    <android.support.v7.widget.RecyclerView
+        xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:layout_weight="10"
+        tools:context="com.example.owlslubic.minimalist.NewListActivity"
+        android:id="@+id/recyclerview_new_list">
+
+    </android.support.v7.widget.RecyclerView>
+
 
          <EditText
              android:id="@+id/edittext_item"
@@ -27,6 +33,7 @@
              android:ems="5"
              android:paddingLeft="5dp"
              android:textSize="27sp"
+             android:layout_weight="10"
              android:hint="Add Item"/>
          <EditText
              android:id="@+id/edittext_description"
@@ -34,23 +41,21 @@
              android:layout_height="wrap_content"
              android:ems="7"
              android:textSize="20sp"
+             android:layout_weight="10"
              android:paddingLeft="10dp"
              android:hint="Description"/>
-    </LinearLayout>
 
-    <Button
-        android:id="@+id/button_save_new_list"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:text="save list"/>
+
 
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/fab_new_list"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_weight="20"
         android:layout_gravity="bottom|end"
+        android:layout_margin="@dimen/fab_margin"
         android:src="@android:drawable/ic_input_add"/>
+
 
 
 </LinearLayout>

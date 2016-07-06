@@ -16,6 +16,7 @@ public class MainListsActivity extends AppCompatActivity {
 
         mRecyclerViewMain = (RecyclerView) findViewById(R.id.recyclerview_main);
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this,LinearLayoutManager.VERTICAL,false);
+        mRecyclerViewMain.setLayoutManager(linearLayoutManager);
 
 
     }
