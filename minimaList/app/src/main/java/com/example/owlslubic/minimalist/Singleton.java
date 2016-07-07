@@ -11,7 +11,6 @@ public class Singleton {
 
     private static Singleton toDoLists = null;
     private static ArrayList<CustomObjectLists> listsList;
-  //  private static ArrayList<String> itemsList;
     private static CustomObjectLists mList;
 
     private Singleton(){
@@ -31,6 +30,10 @@ public class Singleton {
         listsList.add(list);
         //this adds list to the singleton COllection Of Lists
     }
+    public void removeList(CustomObjectLists list){
+        listsList.remove(list);
+
+    }
     public CustomObjectLists getList(){
         return mList;
     }
@@ -39,8 +42,6 @@ public class Singleton {
     public ArrayList<CustomObjectLists> getListsList(){
         return listsList;
     }
-  //  public ArrayList<String> getItems(){
-  //      return itemsList;
   //  }
 
 //add lists and get

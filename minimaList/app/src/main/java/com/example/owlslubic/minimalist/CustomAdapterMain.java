@@ -13,6 +13,8 @@ import java.util.List;
 public class CustomAdapterMain extends RecyclerView.Adapter<CustomViewHolderMain> {
     List<CustomObjectLists> mListsList;
     //expects list of lists
+    Singleton lists = Singleton.getInstance();
+
 
     public CustomAdapterMain(final List<CustomObjectLists> listsList ){
         mListsList = listsList;
@@ -26,8 +28,21 @@ public class CustomAdapterMain extends RecyclerView.Adapter<CustomViewHolderMain
     }
 
     @Override
-    public void onBindViewHolder(CustomViewHolderMain holder, int position) {
-        //this is where it calls info from singleton
+    public void onBindViewHolder(CustomViewHolderMain holder, final int position) {
+
+        //just want to give it the whole list of lists to bind to the textview
+
+       holder.mListTitle.setText(mListsList.get(position).getTitle());
+       // holder.mMainTitle.setText() set to the input from the dialog box
+
+
+        holder.mListTitle.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                lists.getList();
+                //should retrieve an object CustomObjectLists which contains the list title and items list within
+            }
+        });
 
 
     }

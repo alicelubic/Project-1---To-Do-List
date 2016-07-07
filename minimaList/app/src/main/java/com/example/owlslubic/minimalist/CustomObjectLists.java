@@ -32,6 +32,12 @@ public class CustomObjectLists {
         mItemList.add(item);
 
     }
+    public void removeItem(CustomObjectItems item){
+        mItemList.remove(item);
+    }
+    public ArrayList<CustomObjectItems> getItemList(){
+        return mItemList;
+    }
 
     //make list of itemobjects
     //method to add item to list
