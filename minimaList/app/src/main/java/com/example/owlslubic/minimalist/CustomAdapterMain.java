@@ -12,6 +12,7 @@ import java.util.List;
  */
 public class CustomAdapterMain extends RecyclerView.Adapter<CustomViewHolderMain> {
     List<CustomObjectLists> mListsList;
+    //expects list of lists
 
     public CustomAdapterMain(final List<CustomObjectLists> listsList ){
         mListsList = listsList;
@@ -26,6 +27,7 @@ public class CustomAdapterMain extends RecyclerView.Adapter<CustomViewHolderMain
 
     @Override
     public void onBindViewHolder(CustomViewHolderMain holder, int position) {
+        //this is where it calls info from singleton
 
 
     }

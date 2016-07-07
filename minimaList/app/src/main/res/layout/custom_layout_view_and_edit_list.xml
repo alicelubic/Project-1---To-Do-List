@@ -4,23 +4,20 @@
     android:layout_height="match_parent"
     android:padding="20dp">
 
-
-    <EditText
-        android:id="@+id/edittext_title"
-        android:layout_width="wrap_content"
+    <TextView
+        android:id="@+id/textview_main_list_title"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Edit List Title"
+        android:text="Your List Title"
         android:textSize="30sp"
-        android:layout_weight="20"
-        android:padding="10dp"
-        android:layout_gravity="center_horizontal"/>
+        android:gravity="center_horizontal"/>
 
     <android.support.v7.widget.RecyclerView
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="10"
-        tools:context="com.example.owlslubic.minimalist.NewListActivity"
+        tools:context=".ViewAndEditListActivity"
         android:id="@+id/recyclerview_new_list">
 
     </android.support.v7.widget.RecyclerView>

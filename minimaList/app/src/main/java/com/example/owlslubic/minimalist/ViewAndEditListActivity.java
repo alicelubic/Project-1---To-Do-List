@@ -5,7 +5,7 @@ import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 
-public class NewListActivity extends AppCompatActivity {
+public class ViewAndEditListActivity extends AppCompatActivity {
     RecyclerView mRecyclerViewNewList;
 
     @Override

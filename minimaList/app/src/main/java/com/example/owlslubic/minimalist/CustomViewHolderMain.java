@@ -18,7 +18,7 @@ public class CustomViewHolderMain extends RecyclerView.ViewHolder {
         super(itemView);
 
         mMainTitle = (TextView) itemView.findViewById(R.id.textview_main1);
-        mListTitle = (TextView) itemView.findViewById(R.id.textview_list_title);
+        mListTitle = (TextView) itemView.findViewById(R.id.textview_main_list_title);
         mLayoutMain = (LinearLayout) itemView.findViewById(R.id.linearlayout_main);
     }
 }
