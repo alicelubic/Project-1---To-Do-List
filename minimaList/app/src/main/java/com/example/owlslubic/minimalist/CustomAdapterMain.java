@@ -6,10 +6,12 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import java.util.List;
@@ -20,6 +22,7 @@ import java.util.List;
 public class CustomAdapterMain extends RecyclerView.Adapter<CustomViewHolderMain> {
     List<CustomObjectLists> mListsList;
     private EditText mTitleInput;
+    Singleton lists = Singleton.getInstance();
 
 
     public CustomAdapterMain(final List<CustomObjectLists> listsList ){
@@ -28,7 +31,8 @@ public class CustomAdapterMain extends RecyclerView.Adapter<CustomViewHolderMain
 
     @Override
     public CustomViewHolderMain onCreateViewHolder(ViewGroup parent, int viewType) {
-        View parentView = LayoutInflater.from(parent.getContext()).inflate(R.layout.custom_layout_main_lists, parent, false);
+        View parentView = LayoutInflater.from(parent.getContext()).inflate(R.layout.custom_main_list_title, parent, false);
+        //changed R.layout.custom... to a custom xml with just the textview, upon exiting dialog box,
         CustomViewHolderMain viewHolderMain = new CustomViewHolderMain(parentView);
         return viewHolderMain;
     }
@@ -37,8 +41,10 @@ public class CustomAdapterMain extends RecyclerView.Adapter<CustomViewHolderMain
     public void onBindViewHolder(CustomViewHolderMain holder, final int position) {
 
 
-       holder.mListTitle.setText(mListsList.get(position).getTitle());
+//       holder.mListTitle.setText(mListsList.get(position).getTitle());
+       holder.mListTitle.setText(lists.getListsList().get(position).getTitle());
        // holder.mMainTitle.setText() set to the input from the dialog box
+
 
 
         holder.mListTitle.setOnClickListener(new View.OnClickListener() {
@@ -52,19 +58,14 @@ public class CustomAdapterMain extends RecyclerView.Adapter<CustomViewHolderMain
                //should open next activity which will be populated with that list's items
             }
         });
-        holder.mListTitle.setOnLongClickListener(new View.OnLongClickListener() {
-            @Override
-            public boolean onLongClick(View view) {
-                //open dialog
-                return false;
-            }
-        });
+
 
     }
 
     @Override
     public int getItemCount() {
-        return 0;
+        if(mListsList==null){return 0;}else{
+        return mListsList.size();}
     }
 }
 

@@ -43,6 +43,5 @@ public class Singleton {
     }
   //  }
 
-//add lists and get
 
 }
