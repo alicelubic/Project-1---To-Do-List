@@ -10,25 +10,33 @@
         android:layout_height="wrap_content"
         android:text="Your Lists"
         android:textSize="30sp"
+        android:layout_margin="5dp"
         android:gravity="center_horizontal"/>
 
-    <LinearLayout
+    <FrameLayout
         android:id="@+id/linearlayout_main"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:orientation="vertical"
         android:padding="10dp">
 
+        <android.support.v7.widget.RecyclerView
+            xmlns:tools="http://schemas.android.com/tools"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:context="com.example.owlslubic.minimalist.MainListsActivity"
+            android:id="@+id/recyclerview_main">
 
-         <TextView
+        </android.support.v7.widget.RecyclerView>
+
+
+        <TextView
              android:id="@+id/textview_main_list_title"
              android:layout_width="match_parent"
              android:layout_height="wrap_content"
              android:text="List Title"
              android:textSize="27sp"
              android:padding="10dp"/>
-
-    </LinearLayout>
 
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/fab_main"
@@ -37,5 +45,6 @@
         android:layout_gravity="bottom|end"
         android:layout_margin="@dimen/fab_margin"
         android:src="@android:drawable/ic_input_add"/>
+    </FrameLayout>
 
 </LinearLayout>

@@ -29,7 +29,7 @@ public class CustomAdapterViewAndEditList extends RecyclerView.Adapter<CustomVie
     public void onBindViewHolder(CustomViewHolderViewAndEditList holder, int position) {
       //  holder.mListTitle.setText() set this text to the input from the dialog box
         //i am trying to get the itemlist to display in the recyclerview
-        //and items should also go there when added into the edittexts
+
 
 
     }

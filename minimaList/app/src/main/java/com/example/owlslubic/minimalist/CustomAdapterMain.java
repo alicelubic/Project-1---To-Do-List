@@ -1,5 +1,6 @@
 package com.example.owlslubic.minimalist;
 
+import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,8 +13,6 @@ import java.util.List;
  */
 public class CustomAdapterMain extends RecyclerView.Adapter<CustomViewHolderMain> {
     List<CustomObjectLists> mListsList;
-    //expects list of lists
-    Singleton lists = Singleton.getInstance();
 
 
     public CustomAdapterMain(final List<CustomObjectLists> listsList ){
@@ -30,7 +29,6 @@ public class CustomAdapterMain extends RecyclerView.Adapter<CustomViewHolderMain
     @Override
     public void onBindViewHolder(CustomViewHolderMain holder, final int position) {
 
-        //just want to give it the whole list of lists to bind to the textview
 
        holder.mListTitle.setText(mListsList.get(position).getTitle());
        // holder.mMainTitle.setText() set to the input from the dialog box
@@ -39,10 +37,34 @@ public class CustomAdapterMain extends RecyclerView.Adapter<CustomViewHolderMain
         holder.mListTitle.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                lists.getList();
-                //should retrieve an object CustomObjectLists which contains the list title and items list within
+                Intent intent = new Intent(view.getContext(), ViewAndEditListActivity.class);
+                intent.putExtra(ViewAndEditListActivity.KEY, position);
+                //intent.putExtra(key,value)
+                //above line sends data from clicked list to second activity
+               view.getContext().startActivity(intent);
+               //should open next activity which will be populated with that list's items
             }
         });
+        holder.mListTitle.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View view) {
+                //open dialog
+                return false;
+            }
+        });
+
+        holder.mFabMain.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view) {
+                //open dialog box
+                //dialogbox will do lists.addList() and lists.setTitle()
+                //inside onclicklistener for OK button on the dialog is where we get string
+                //create customobjectlists x new customlistobject(STRING input,
+
+            }
+        });
+
+
 
 
     }

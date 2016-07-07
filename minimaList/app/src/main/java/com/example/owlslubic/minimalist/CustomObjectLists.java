@@ -9,15 +9,17 @@ import java.util.List;
 public class CustomObjectLists {
 
     String mTitle;
-    ArrayList<CustomObjectItems> mItemList = new ArrayList();
+    ArrayList<CustomObjectItems> mItemList;
 
     public CustomObjectLists(){
         mTitle = "Title";
 
     }
-    public CustomObjectLists(String title, ArrayList<CustomObjectItems> itemList){
+    public CustomObjectLists(String title){
         mTitle = title;
-        mItemList = itemList;
+        mItemList = new ArrayList();
+        //when created, it is given an empty list
+
 
     }
 
@@ -30,6 +32,7 @@ public class CustomObjectLists {
 
     public void addItem(CustomObjectItems item){
         mItemList.add(item);
+
 
     }
     public void removeItem(CustomObjectItems item){

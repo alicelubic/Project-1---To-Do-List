@@ -13,15 +13,15 @@ public class MainListsActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main_lists);
+        setContentView(R.layout.custom_layout_main_lists);
 
         mRecyclerViewMain = (RecyclerView) findViewById(R.id.recyclerview_main);
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this,LinearLayoutManager.VERTICAL,false);
         mRecyclerViewMain.setLayoutManager(linearLayoutManager);
 
         //set adapter
-     //  CustomAdapterMain adapter = new CustomAdapterMain(lists.getListsList());
-     //  RecyclerView.setAdapter(adapter);
+       CustomAdapterMain adapter = new CustomAdapterMain(lists.getListsList());
+       mRecyclerViewMain.setAdapter(adapter);
 
 
     }

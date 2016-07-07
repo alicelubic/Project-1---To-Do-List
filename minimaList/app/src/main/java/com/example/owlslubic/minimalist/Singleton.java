@@ -11,7 +11,6 @@ public class Singleton {
 
     private static Singleton toDoLists = null;
     private static ArrayList<CustomObjectLists> listsList;
-    private static CustomObjectLists mList;
 
     private Singleton(){
         listsList = new ArrayList<>();
@@ -34,8 +33,8 @@ public class Singleton {
         listsList.remove(list);
 
     }
-    public CustomObjectLists getList(){
-        return mList;
+    public CustomObjectLists getListByPosition(int position){
+       return listsList.get(position);
     }
     //this retrieves a list from the collection of lists
 
