@@ -60,48 +60,6 @@ public class CustomAdapterMain extends RecyclerView.Adapter<CustomViewHolderMain
             }
         });
 
-        holder.mFabMain.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View view) {
-                //open dialog box
-                //dialogbox will do lists.addList() and lists.setTitle()
-                //inside onclicklistener for OK button on the dialog is where we get string
-                //create customobjectlists x new customlistobject(STRING input,
-                Toast.makeText(view.getContext(), "It's working!", Toast.LENGTH_SHORT).show();
-
-               AlertDialog.Builder builder = new AlertDialog.Builder(view.getContext());
-                builder.setView(R.id.edittext_dialog_new);
-               builder.setPositiveButton("ok", new DialogInterface.OnClickListener() {
-
-                   @Override
-                   public void onClick(DialogInterface dialogInterface, int i) {
-                       //this is where the list title must be saved or wahtever--see ntoes
-
-                   }
-               });
-               builder.setNegativeButton("cancel", new DialogInterface.OnClickListener() {
-                   @Override
-                   public void onClick(DialogInterface dialogInterface, int i) {
-                       //make it return to main activity.... maybe something with finish();
-                   }
-               });
-
-               builder.setTitle("Create New List");
-               final EditText input = new EditText(view.getContext());
-               builder.setView(input);
-
-
-
-
-                //add more attributes
-
-              //  AlertDialog dialog = builder.create();
-
-
-            }
-        });
-
-
     }
 
     @Override
@@ -109,3 +67,4 @@ public class CustomAdapterMain extends RecyclerView.Adapter<CustomViewHolderMain
         return 0;
     }
 }
+

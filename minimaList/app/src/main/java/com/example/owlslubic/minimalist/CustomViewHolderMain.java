@@ -12,7 +12,7 @@ import android.widget.TextView;
 public class CustomViewHolderMain extends RecyclerView.ViewHolder {
 
     public TextView mMainTitle, mListTitle;
-    public FloatingActionButton mFabMain;
+
 
 
     public CustomViewHolderMain(View itemView) {
@@ -20,6 +20,6 @@ public class CustomViewHolderMain extends RecyclerView.ViewHolder {
 
         mMainTitle = (TextView) itemView.findViewById(R.id.textview_main1);
         mListTitle = (TextView) itemView.findViewById(R.id.textview_main_list_title);
-        mFabMain = (FloatingActionButton) itemView.findViewById(R.id.fab_main);
+
     }
 }
