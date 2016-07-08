@@ -20,7 +20,7 @@ public class CustomViewHolderViewAndEditList extends RecyclerView.ViewHolder {
 
       //  mItemInput = (EditText) itemView.findViewById(R.id.edittext_item);
       //  mDescriptionInput = (EditText) itemView.findViewById(R.id.edittext_description);
-//        mListTitle = (TextView) itemView.findViewById(R.id.textview_main_list_title);
+
      //   mFab2 = (FloatingActionButton) itemView.findViewById(R.id.fab_new_list);
         mItemName = (TextView) itemView.findViewById(R.id.textview_item_name);
         mDescription = (TextView) itemView.findViewById(R.id.textview_description);

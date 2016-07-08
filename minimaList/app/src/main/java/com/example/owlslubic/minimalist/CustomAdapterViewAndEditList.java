@@ -36,7 +36,7 @@ public class CustomAdapterViewAndEditList extends RecyclerView.Adapter<CustomVie
     public void onBindViewHolder(CustomViewHolderViewAndEditList holder, final int position) {
 //      holder.mListTitle.setText(mItemsList.get(position).toString());
 
-//        holder.mItemName.setText(mItemsList.get(position).toString());
+//        holder.mItemName.setText(mItemsList.get(position).toString())
 
 
 //        holder.mItemName.setText(lists.getListByPosition(position).getItemList().get(position).getItem().toString());
