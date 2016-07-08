@@ -39,9 +39,7 @@ public class CustomAdapterMain extends RecyclerView.Adapter<CustomViewHolderMain
 
     @Override
     public void onBindViewHolder(CustomViewHolderMain holder, final int position) {
-
-
-//       holder.mListTitle.setText(mListsList.get(position).getTitle());
+        //sets the list title to the input
        holder.mListTitle.setText(lists.getListsList().get(position).getTitle());
        // holder.mMainTitle.setText() set to the input from the dialog box
 
@@ -58,7 +56,18 @@ public class CustomAdapterMain extends RecyclerView.Adapter<CustomViewHolderMain
                //should open next activity which will be populated with that list's items
             }
         });
+        //this removes list from listofLists on long click -- add a dialog!
+        holder.mListTitle.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View view) {
 
+                //calldialogmethod?
+
+                lists.removeList(lists.getListByPosition(position));
+                notifyDataSetChanged();
+                return false;
+            }
+        });
 
     }
 
@@ -67,5 +76,7 @@ public class CustomAdapterMain extends RecyclerView.Adapter<CustomViewHolderMain
         if(mListsList==null){return 0;}else{
         return mListsList.size();}
     }
+
+
 }
 

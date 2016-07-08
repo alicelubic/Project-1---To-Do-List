@@ -11,9 +11,11 @@ public class Singleton {
 
     private static Singleton toDoLists = null;
     private static ArrayList<CustomObjectLists> listsList;
+ //  private static ArrayList<CustomObjectItems> itemsList;
 
     private Singleton(){
         listsList = new ArrayList<>();
+ //       itemsList = new ArrayList<>();
     }
 
     public static Singleton getInstance(){
@@ -42,6 +44,12 @@ public class Singleton {
         return listsList;
     }
 
+ //   public CustomObjectItems getItemByPosition(int position){
+ //       return itemsList.get(position);
+    }
 
 
-}
+
+
+
+

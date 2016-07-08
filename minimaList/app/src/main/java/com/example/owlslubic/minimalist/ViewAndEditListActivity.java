@@ -1,7 +1,5 @@
 package com.example.owlslubic.minimalist;
 
-import android.app.AlertDialog;
-import android.content.DialogInterface;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -9,13 +7,12 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.EditText;
-import android.widget.LinearLayout;
 
 public class ViewAndEditListActivity extends AppCompatActivity {
     RecyclerView mRecyclerViewNewList;
     Singleton lists = Singleton.getInstance();
     public static final String KEY = "key";
-    EditText editText1, editText2;
+    EditText editTextItem, editTextDescription;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,11 +22,11 @@ public class ViewAndEditListActivity extends AppCompatActivity {
         mRecyclerViewNewList = (RecyclerView) findViewById(R.id.recyclerview_new_list);
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
         mRecyclerViewNewList.setLayoutManager(linearLayoutManager);
-        editText1 = (EditText) findViewById(R.id.edittext_item);
-        editText2 = (EditText) findViewById(R.id.edittext_description);
+        editTextItem = (EditText) findViewById(R.id.edittext_item);
+        editTextDescription = (EditText) findViewById(R.id.edittext_description);
 
         //set adapter
-        final int position = getIntent().getIntExtra(KEY, -1);
+        final int position = getIntent().getIntExtra(KEY, -1); //that way we know it was bad if it's -1 because there is no negative index
         final CustomAdapterViewAndEditList adapter = new CustomAdapterViewAndEditList(lists.getListByPosition(position).getItemList());
         mRecyclerViewNewList.setAdapter(adapter);
 
@@ -46,10 +43,11 @@ public class ViewAndEditListActivity extends AppCompatActivity {
         mFab2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                CustomObjectItems item = new CustomObjectItems(editText1.getText().toString(), editText2.getText().toString());
+                CustomObjectItems item = new CustomObjectItems(editTextItem.getText().toString(), editTextDescription.getText().toString());
 
-                lists.getListByPosition(position).addItem(item); //in () goes whatever makes the text get saved
-
+                CustomObjectLists currentList = lists.getListByPosition(position);
+                currentList.addItem(item);
+//                lists.getListByPosition(position).addItem(item);
                 adapter.notifyDataSetChanged();
 
             }
