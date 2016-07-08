@@ -16,7 +16,7 @@ public class CustomObjectItems {
         mDescription = description;
     }
 
-    public String getItem(){ //make it return a customobjectitem rather than string?
+    public String getItem(){
         return mItem;
     }
 

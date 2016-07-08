@@ -4,6 +4,7 @@ import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
@@ -12,6 +13,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.List;
@@ -23,6 +25,7 @@ public class CustomAdapterMain extends RecyclerView.Adapter<CustomViewHolderMain
     List<CustomObjectLists> mListsList;
     private EditText mTitleInput;
     Singleton lists = Singleton.getInstance();
+   // TextView mListTitle;
 
 
     public CustomAdapterMain(final List<CustomObjectLists> listsList ){
@@ -60,8 +63,11 @@ public class CustomAdapterMain extends RecyclerView.Adapter<CustomViewHolderMain
         holder.mListTitle.setOnLongClickListener(new View.OnLongClickListener() {
             @Override
             public boolean onLongClick(View view) {
+                //mListTitle.setTextColor(Color.RED);
+                //using above method causes app to crash
 
-                //calldialogmethod?
+
+                //calldialogmethod
 
                 lists.removeList(lists.getListByPosition(position));
                 notifyDataSetChanged();

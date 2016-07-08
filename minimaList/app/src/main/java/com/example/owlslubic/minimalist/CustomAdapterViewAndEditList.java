@@ -48,16 +48,17 @@ public class CustomAdapterViewAndEditList extends RecyclerView.Adapter<CustomVie
 
 
         //below is clicking on the item name, maybe make a second one for description or combine them somehow
-       // holder.mItemName.setOnLongClickListener(new View.OnLongClickListener() {
-       //  @Override
-       //  public boolean onLongClick(View view) {
-       //      //lists.getListByPosition(position).removeItem(lists.getItemByPosition(position));
-       //      //tryint to get the item object itself to delete it, above code does not work
+        holder.mItemName.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View view) {
+                mItemsList.remove(mItemsList.get(position));
+                //tryint to get the item object itself to delete it, above code does not work
 
-       //      notifyDataSetChanged();
+                notifyDataSetChanged();
 
-       //      return false;
-       //  }
+                return false;
+            }
+        });
         }
 
 

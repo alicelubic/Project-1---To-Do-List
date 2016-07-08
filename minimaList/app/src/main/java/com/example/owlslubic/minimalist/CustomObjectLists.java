@@ -10,7 +10,6 @@ public class CustomObjectLists {
 
     String mTitle;
     ArrayList<CustomObjectItems> mItemList;
-    CustomObjectItems mItem;
 
     public CustomObjectLists(){
         mTitle = "Title";
@@ -44,11 +43,5 @@ public class CustomObjectLists {
     }
 
 
-    public CustomObjectItems getItemByPostion(int position){
-        return mItemList.get(position);
-    }
-
-    //make list of itemobjects
-    //method to add item to list
 
 }

@@ -45,39 +45,52 @@ public class MainListsActivity extends AppCompatActivity {
                         LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.MATCH_PARENT);
                 input.setLayoutParams(lp);
                 builder.setView(input);
-                builder.setPositiveButton("ok", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialogInterface, int i) {
-
-                        lists.addList(new CustomObjectLists(input.getText().toString()));
-                        adapter.notifyDataSetChanged();
-
-                 //Intent intent = new Intent(MainListsActivity.this, ViewAndEditListActivity.class);
-                 //startActivity(intent);
-                 //  if(lists == null){}
-                 //  else{
-                 //      Log.d("test",
-                 //  lists.getListsList().get(0).getTitle());}
-//               //    Log.d("test", lists.addList(new CustomObjectLists(input.getText().toString()));)
-
-                        //this is where the list title must be saved or wahtever--see ntoes
-                    }
-                });
-                builder.setNegativeButton("cancel", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialogInterface, int i) {
-                    }
-                });
+                builder.setPositiveButton("ok", null);
+                builder.setNegativeButton("cancel", null);
 
                 builder.setTitle("Create New List");
-                AlertDialog dialog = builder.create();
+                final AlertDialog dialog = builder.create();
                 dialog.show();
+
+                dialog.getButton(DialogInterface.BUTTON_POSITIVE).setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        if (input.getText().toString().length()==0){
+                            input.setError("Name your list!");
+                        }
+                        else {
+                            lists.addList(new CustomObjectLists(input.getText().toString()));
+                            adapter.notifyDataSetChanged();
+                            dialog.dismiss();
+                        }
+
+                    }
+                });
+
+                dialog.getButton(DialogInterface.BUTTON_NEGATIVE).setOnClickListener(new View.OnClickListener() {
+                    @Override
+
+                    public void onClick(View view) {
+                        dialog.dismiss();
+                    }
+                });
             }
         });
 
 
+    //a method that can be called to create dialog?
+    //  public void deployDeleteListDialog(){
+    //  AlertDialog.Builder builder = new AlertDialog.Builder(this);
+    //  builder.setMessage("Are you sure you want to delete?");
+    //  builder.setPositiveButton("yeah", new DialogInterface.OnClickListener() {
+    //      @Override
+    //      public void onClick(DialogInterface dialogInterface, int i) {
+    //
+    //      }
+    //  });
 
 
     }
 
 }
+

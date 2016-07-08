@@ -43,8 +43,8 @@ public class ViewAndEditListActivity extends AppCompatActivity {
         if (position >= 0) {
            mList = lists.getListByPosition(position);
             mListTitle.setText(mList.getTitle());
-
             //this gives us the list, adn thus the info that the lsit holds - title and list of items
+            //alo sets title textview to title of list
         }
 
 
@@ -62,6 +62,10 @@ public class ViewAndEditListActivity extends AppCompatActivity {
                 currentList.addItem(item);
 //                lists.getListByPosition(position).addItem(item);
                 adapter.notifyDataSetChanged();
+
+                //this clears edittexts after adding item
+                editTextDescription.setText("");
+                editTextItem.setText("");
 
 
 
