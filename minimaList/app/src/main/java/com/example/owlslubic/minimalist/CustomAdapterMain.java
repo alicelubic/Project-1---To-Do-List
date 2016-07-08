@@ -51,6 +51,8 @@ public class CustomAdapterMain extends RecyclerView.Adapter<CustomViewHolderMain
         holder.mListTitle.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+               Toast.makeText(view.getContext(), "hold title to delete", Toast.LENGTH_SHORT).show();
+
                 Intent intent = new Intent(view.getContext(), ViewAndEditListActivity.class);
                 intent.putExtra(ViewAndEditListActivity.KEY, position);
                 //intent.putExtra(key,value)
@@ -71,7 +73,7 @@ public class CustomAdapterMain extends RecyclerView.Adapter<CustomViewHolderMain
 
                 lists.removeList(lists.getListByPosition(position));
                 notifyDataSetChanged();
-                return false;
+                return true;
             }
         });
 

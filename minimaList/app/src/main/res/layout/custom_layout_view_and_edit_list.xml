@@ -9,6 +9,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Your List Title"
+        android:textColor="@color/colorPrimary"
         android:textSize="30sp"
         android:padding="10dp"
         android:gravity="center_horizontal"/>

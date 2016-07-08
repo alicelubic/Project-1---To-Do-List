@@ -45,6 +45,13 @@ public class CustomAdapterViewAndEditList extends RecyclerView.Adapter<CustomVie
         //i am trying to get the item list to display in the recyclerview
 
 
+        holder.mItemName.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(view.getContext(), "hold item to delete", Toast.LENGTH_SHORT).show();
+            }
+        });
+
 
 
         //below is clicking on the item name, maybe make a second one for description or combine them somehow
@@ -56,7 +63,7 @@ public class CustomAdapterViewAndEditList extends RecyclerView.Adapter<CustomVie
 
                 notifyDataSetChanged();
 
-                return false;
+                return true;
             }
         });
         }

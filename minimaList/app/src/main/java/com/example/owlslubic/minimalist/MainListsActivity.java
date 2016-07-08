@@ -13,6 +13,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.LinearLayout;
+import android.widget.Toast;
 
 public class MainListsActivity extends AppCompatActivity {
     RecyclerView mRecyclerViewMain;
@@ -59,6 +60,7 @@ public class MainListsActivity extends AppCompatActivity {
                             input.setError("Name your list!");
                         }
                         else {
+            //                Toast.makeText(view.getContext(), "hold title to delete", Toast.LENGTH_SHORT).show();
                             lists.addList(new CustomObjectLists(input.getText().toString()));
                             adapter.notifyDataSetChanged();
                             dialog.dismiss();
