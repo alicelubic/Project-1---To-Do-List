@@ -16,6 +16,7 @@ import java.util.List;
  */
 public class CustomAdapterViewAndEditList extends RecyclerView.Adapter<CustomViewHolderViewAndEditList>{
    List<CustomObjectItems> mItemsList;
+    public Singleton lists = Singleton.getInstance();
 
 
     public CustomAdapterViewAndEditList(final List<CustomObjectItems> itemsList ){
@@ -24,15 +25,23 @@ public class CustomAdapterViewAndEditList extends RecyclerView.Adapter<CustomVie
 
     @Override
     public CustomViewHolderViewAndEditList onCreateViewHolder(ViewGroup parent, int viewType) {
-        View parentView = LayoutInflater.from(parent.getContext()).inflate(R.layout.custom_layout_view_and_edit_list, parent, false);
+        View parentView = LayoutInflater.from(parent.getContext()).inflate(R.layout.custom_item_info, parent, false);
         CustomViewHolderViewAndEditList viewHolderNewList = new CustomViewHolderViewAndEditList(parentView);
         return viewHolderNewList;
     }
 
     @Override
     public void onBindViewHolder(CustomViewHolderViewAndEditList holder, int position) {
-      //  holder.mListTitle.setText() set this text to the input from the dialog box
-        //i am trying to get the itemlist to display in the recyclerview
+//      holder.mListTitle.setText(mItemsList.get(position).toString());
+
+//        holder.mItemName.setText(mItemsList.get(position).toString());
+
+
+        holder.mItemName.setText(lists.getListByPosition(position).getItemList().get(position).getItem().toString());
+        holder.mDescription.setText(lists.getListByPosition(position).getItemList().get(position).getDescription().toString());
+        //i am trying to get the item list to display in the recyclerview
+
+
 
 
     }

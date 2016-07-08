@@ -41,7 +41,7 @@ public class Singleton {
     public ArrayList<CustomObjectLists> getListsList(){
         return listsList;
     }
-  //  }
+
 
 
 }
